@@ -1,0 +1,141 @@
+/* ---------------------------- */
+/* Custom properties            */
+/* ---------------------------- */
+
+:root {
+    /* colors */
+    --clr-dark: 230 35% 7%;
+    --clr-light: 247 100% 96%;
+    --clr-sub: 161 45% 56%;
+    --clr-main: 218 100% 34%;
+    /* fonts */
+    --ff-main: 'Kufam', sans-serif;
+    --ff-sub: 'Harmattan', sans-serif;
+}
+
+/* colors */
+.text-dark
+
+/* ---------------------------- */
+/* Reset                        */
+/* ---------------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------------------------- */
+/* overall style                */
+/* ---------------------------- */
+
+body {
+    background-color: hsl(var(--clr-light));
+    color: hsl(var(--clr-dark));
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--ff-sub);
+    margin: 2.5rem;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    background-color: hsl(var(--clr-dark) / 0.05);
+}
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: var(--ff-main);
+    margin: 2rem;
+    text-align: center;
+}
+label { 
+    display: block;
+}
+input , select, button{
+    display: block;
+    border: 0;
+    background-color: hsl(var(--clr-main) / 0.4);
+}
+button {
+    background-color: hsl(var(--clr-sub) / 0.3);
+}
+
+/* ---------------------------- */
+/* specific styling             */
+/* ---------------------------- */
+
+.add-button {
+    margin-inline: auto;
+}

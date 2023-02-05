@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Harmattan&family=Kufam&display=swap" rel="stylesheet">
+
+        <title>الجدولة</title>
+    </head>
+    <body dir="auto">
+        <div class="title">
+            <h1>جدولة الدروس التلقائية للشيخ محمد الكرار</h1>
+        </div>
+        <main class="main">
+            <div class="majlis-one-container">
+                <label for="majlis-one">اختر موضوع المجلس الأول:</label>
+                <select name="majlis-one" id="majlis-one">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="stop-point-one">توقفنا عند:</label>
+                <input type="text" name="stop-point-one" id="stop-point-one" placeholder="اكتب علامة الوقف."/>
+                <label for="stop-point-one">صفحة رقم:</label>
+                <input type="number" name="" id="" placeholder="أدخل رقم الصفحة.">
+            </div>
+            <div class="majlis-two-container">
+                <label for="majlis-two">اختر موضوع المجلس الثاني:</label>
+                <select name="majlis-two" id="majlis-two">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="stop-point-two">توقفنا عند:</label>
+                <input type="text" name="stop-point-two" id="stop-point-two" placeholder="اكتب علامة الوقف." />
+                <label for="stop-point-two">صفحة رقم:</label>
+                <input type="number" name="" id="" placeholder="أدخل رقم الصفحة.">
+            </div>
+            <div class="tasks-container flex">
+                <label for="">أدخل مهام المجلس:</label>
+                <input type="text" name="" id="" placeholder='قم بإدخال مهمة ثم اضغط زر "أضف".'/>
+                <button class="add-button">أضف</button>
+                <!-- <li>
+                <ol></ol>
+            </li> -->
+            </div>
+            <div class="result-field">
+                <button>قم بإنشاء الجدول</button>
+                <!-- output field -->
+                <!-- <button>طباعة</button> -->
+            </div>
+        </main>
+    </body>
+</html>
