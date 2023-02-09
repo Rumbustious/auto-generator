@@ -4,12 +4,17 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Harmattan&family=Kufam&display=swap" rel="stylesheet">
-
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <!-- stylesheets & scripts -->
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        
+        
         <title>الجدولة</title>
     </head>
     <body dir="auto">
@@ -19,41 +24,57 @@
         <main class="main">
             <div class="majlis-one-container">
                 <label for="majlis-one">اختر موضوع المجلس الأول:</label>
-                <select name="majlis-one" id="majlis-one">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="majlis-one" id="majlis-one" class="majlis-list">
+                    <option value="default">-اختر-</option>
+                    <option value="Tafsir">كتاب التفسير للشيخ السعدي رحمه الله</option>
+                    <option value="Ta'weel">تأويل مشكل القرآن</option>
+                    <option value="Aqidah">العقيدة الواسطية بشرح العصيمي</option>
+                    <option value="Tazkiyah">مداوة النفوس</option>
+                    <option value="Sunnan">معالم سنن أبو داوود للخطابي</option>
+                    <option value="Mustalah">نخبة الفكر</option>
+                    <option value="Fiqh">العمدة في الفقه</option>
+                    <option value="Fiqh-two">منظومة القواعد الفقهية</option>
+                    <option value="Nahw">نحو أولى إعدادي</option>
+                    <option value="Seerah">مختصر السيرة</option>
                 </select>
                 <label for="stop-point-one">توقفنا عند:</label>
                 <input type="text" name="stop-point-one" id="stop-point-one" placeholder="اكتب علامة الوقف."/>
                 <label for="stop-point-one">صفحة رقم:</label>
-                <input type="number" name="" id="" placeholder="أدخل رقم الصفحة.">
+                <input type="number" name="page-reached-one" id="page-reached-one" placeholder="أدخل رقم الصفحة.">
             </div>
             <div class="majlis-two-container">
                 <label for="majlis-two">اختر موضوع المجلس الثاني:</label>
-                <select name="majlis-two" id="majlis-two">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="majlis-two" id="majlis-two" class="majlis-list">
+                    <option value="default">-اختر-</option>
+                    <option value="Tafsir">كتاب التفسير للشيخ السعدي رحمه الله</option>
+                    <option value="Ta'weel">تأويل مشكل القرآن</option>
+                    <option value="Aqidah">العقيدة الواسطية بشرح العصيمي</option>
+                    <option value="Tazkiyah">مداوة النفوس</option>
+                    <option value="Sunnan">معالم سنن أبو داوود للخطابي</option>
+                    <option value="Mustalah">نخبة الفكر</option>
+                    <option value="Fiqh">العمدة في الفقه</option>
+                    <option value="Fiqh-two">منظومة القواعد الفقهية</option>
+                    <option value="Nahw">نحو أولى إعدادي</option>
+                    <option value="Seerah">مختصر السيرة</option>
                 </select>
                 <label for="stop-point-two">توقفنا عند:</label>
                 <input type="text" name="stop-point-two" id="stop-point-two" placeholder="اكتب علامة الوقف." />
                 <label for="stop-point-two">صفحة رقم:</label>
-                <input type="number" name="" id="" placeholder="أدخل رقم الصفحة.">
-            </div>
+                <input type="number" name="page-reached-two" id="page-reached-two" placeholder="أدخل رقم الصفحة.">
+            </div>  
             <div class="tasks-container flex">
-                <label for="">أدخل مهام المجلس:</label>
-                <input type="text" name="" id="" placeholder='قم بإدخال مهمة ثم اضغط زر "أضف".'/>
+                <label for="tasks-input">أدخل مهام المجلس:</label>
+                <input type="text" name="tasks-input" id="tasks-input" placeholder='قم بإدخال مهمة ثم اضغط زر "أضف".'/>
                 <button class="add-button">أضف</button>
-                <!-- <li>
-                <ol></ol>
-            </li> -->
+                <ul  l class="tasks-list">
+                   <!-- here goes the the added tasks -->
+                </ul>
             </div>
             <div class="result-field">
-                <button>قم بإنشاء الجدول</button>
+                <button class="result-button">قم بإنشاء الجدول</button>
                 <!-- output field -->
+                <i class="fa-solid fa-copy"></i>
+                <p class="result-box"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam quaerat magnam, temporibus, veritatis cumque distinctio pariatur ducimus earum esse ad sunt animi ratione et eius dicta, eligendi labore id.</p>
                 <!-- <button>طباعة</button> -->
             </div>
         </main>
