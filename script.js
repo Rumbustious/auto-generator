@@ -65,7 +65,7 @@ const showResult = function () {
     }
     if (tasks.length !== 0) {
         for (const [taskNumber, task] of tasks.entries()) {
-            text += `مهام المجلس 🎯:
+            text += '\n' + `مهام المجلس 🎯:
             ${replaceNumbers(taskNumber + 1)} ${task} `;
         }
     } else {
