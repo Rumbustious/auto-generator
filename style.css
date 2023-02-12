@@ -123,11 +123,13 @@ body {
     margin: 2rem;
     text-align: center;
 }
-label { 
+label {
     display: block;
     padding-inline: 0.5rem;
 }
-input , select, button{
+input,
+select,
+button {
     /* width: 15rem; */
     display: block;
     padding-inline: 1rem;
@@ -151,21 +153,21 @@ button:hover {
     background-color: hsl(var(--clr-sub));
 }
 
-.tasks-list{
+.tasks-list {
     text-decoration: none;
     list-style: none;
 }
 .tasks-list li:nth-child(odd) {
-    background-color: hsl(var(--clr-dark) / 0.1 );
+    background-color: hsl(var(--clr-dark) / 0.1);
 }
 .tasks-list li {
     position: relative;
     padding: 0.7rem;
     margin: 0.1rem;
-    background-color: hsl(var(--clr-dark) / 0.2 );
+    background-color: hsl(var(--clr-dark) / 0.2);
 }
-.tasks-list li:hover{
-    background-color: hsl(var(--clr-dark) / 0.3 );
+.tasks-list li:hover {
+    background-color: hsl(var(--clr-dark) / 0.3);
 }
 .close {
     font-size: 2rem;
@@ -173,9 +175,7 @@ button:hover {
     top: 30%;
     left: 0;
     color: hsl(var(--clr-main) / 0.5);
-    transform: translate(10px,-5px);    
-    
-   
+    transform: translate(10px, -5px);
 }
 .close:hover {
     color: hsl(var(--clr-main));
@@ -197,17 +197,23 @@ button:hover {
     padding: 2.6rem 1rem 1rem;
     text-align: center;
 }
-.fa-copy {
+.copy-button {
     position: absolute;
     top: 3.5rem;
     left: 1rem;
     font-size: 1.4rem;
     transition: font-size 0.1s ease-in-out;
 }
-.fa-copy:hover {
+.copy-button:hover {
     cursor: pointer;
     font-size: 1.6rem;
 }
-.hidden { 
+.hidden {
     display: none;
+}
+.check-style {
+    border-radius: 50%;
+    padding: 0.25rem;
+    background-color: hsl(var(--clr-sub));
+    color: hsl(var(--clr-light));
 }

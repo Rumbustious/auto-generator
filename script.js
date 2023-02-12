@@ -15,7 +15,7 @@ const taskList = document.querySelector('.tasks-list');
 const resultField = document.querySelector('.result-field');
 const resultBox = document.querySelector('.result-box');
 
-const copyButton = document.querySelector('.fa-copy');
+const copyButton = document.querySelector('.copy-button');
 const addButton = document.querySelector('.add-button');
 const resultButton = document.querySelector('.result-button');
 const tasks = [];
@@ -45,11 +45,6 @@ const addTasks = function () {
     renderTasks();
 };
 const showResult = function () {
-    resultBox.classList.remove('hidden');
-    copyButton.classList.remove('hidden');
-    resultBox.setAttribute('aria-hidden', 'false');
-    copyButton.setAttribute('aria-hidden', 'false');
-
     if (majlisOne.value === 'default' && majlisTwo.value === 'default')
         return alert('اختر مجلسًا');
 
@@ -57,25 +52,30 @@ const showResult = function () {
         if (!stopOne.value.trim())
             return alert('أدخل علامة التوقف للمجلس الأول');
         if (!pageOne.value) return alert('أدخل رقم الصفحة للمجلس الأول');
-        resultBox.innerText = `💫 مجلس ${majlisOne.value}. توقفنا عند ${stopOne.value}. صــ ${pageOne.value}
-        `;
+        text = `💫 مجلس ${majlisOne.value}. توقفنا عند ${stopOne.value}. صــ ${pageOne.value}`;
     }
 
     if (majlisTwo.value !== 'default') {
         if (!stopOne.value.trim())
-            return alert('أدخل علامة التوقف للمجلس الأول');
-        if (!pageOne.value) return alert('أدخل رقم الصفحة للمجلس الأول');
-        resultBox.innerText += `💫 مجلس ${majlisTwo.value}. توقفنا عند ${stopTwo.value}. صــ ${pageTwo.value}
-        `;
+            return alert('أدخل علامة التوقف للمجلس الثاني');
+        if (!pageOne.value) return alert('أدخل رقم الصفحة للمجلس الثاني');
+        text +=
+            '\n' +
+            `💫 مجلس ${majlisTwo.value}. توقفنا عند ${stopTwo.value}. صــ ${pageTwo.value}`;
     }
-    if (tasks) {
+    if (tasks.length !== 0) {
         for (const [taskNumber, task] of tasks.entries()) {
-            resultBox.innerText += `${replaceNumbers(taskNumber + 1)} ${task}
-            `;
+            text += `مهام المجلس 🎯:
+            ${replaceNumbers(taskNumber + 1)} ${task} `;
         }
     } else {
-       resultBox.innerText += 'لا يوجد مهام'
+        text += '\n' + `لا يوجد مهام`;
     }
+    resultBox.innerText = text;
+    resultBox.classList.remove('hidden');
+    copyButton.classList.remove('hidden');
+    resultBox.setAttribute('aria-hidden', 'false');
+    copyButton.setAttribute('aria-hidden', 'false');
 };
 
 const replaceNumbers = function (num) {
@@ -100,7 +100,20 @@ const replaceNumbers = function (num) {
     }
     return Newdigit.join('');
 };
-// Event Listeners
+
+const copyClipboard = function () {
+    navigator.clipboard.writeText(text);
+    copyButton.classList.remove('fa-copy', 'fa-solid');
+    copyButton.classList.add('fas', 'fa-check', 'check-style');
+
+    setTimeout(() => {
+        copyButton.classList.remove('fas', 'fa-check', 'check-style');
+        copyButton.classList.add('fa-copy', 'fa-solid');
+        
+        
+    }, 2000);
+};
+
 addButton.addEventListener('click', addTasks);
 
 document.addEventListener('click', function (e) {
@@ -112,3 +125,5 @@ document.addEventListener('click', function (e) {
     }
 });
 resultButton.addEventListener('click', showResult);
+
+copyButton.addEventListener('click', copyClipboard);
