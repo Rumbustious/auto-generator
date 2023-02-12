@@ -64,9 +64,9 @@ const showResult = function () {
             `💫 مجلس ${majlisTwo.value}. توقفنا عند ${stopTwo.value}. صــ ${pageTwo.value}`;
     }
     if (tasks.length !== 0) {
+        text += '\n' + `مهام المجلس 🎯`;
         for (const [taskNumber, task] of tasks.entries()) {
-            text += '\n' + `مهام المجلس 🎯:
-            ${replaceNumbers(taskNumber + 1)} ${task} `;
+            text += '\n' + `${replaceNumbers(taskNumber + 1)} ${task} `;
         }
     } else {
         text += '\n' + `لا يوجد مهام`;
