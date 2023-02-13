@@ -217,3 +217,20 @@ button:hover {
     background-color: hsl(var(--clr-sub));
     color: hsl(var(--clr-light));
 }
+
+/* ---------------------------- */
+/* Media Queries                */
+/* ---------------------------- */
+
+@media (max-width: 25em) {
+    input,
+    select,
+    button ,
+    label {
+        max-width: 15rem;   
+    }
+    .result-box {
+        max-width: 15rem;
+        min-width: 10rem;
+    }
+}
